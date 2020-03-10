@@ -19,7 +19,8 @@ const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 25px 0px;
+  padding: 25px 10px;
+  z-index: 2;
 `;
 
 const HeaderWrapper = styled.div`
@@ -74,7 +75,6 @@ export default withRouter(({ history }) => {
   const search = useInput("");
   const { data, loading } = useQuery(ME);
   if (loading) return "";
-  console.log(data.me);
   const onSearchSubmit = e => {
     e.preventDefault();
     history.push(`/search?term=${search.value}`);
